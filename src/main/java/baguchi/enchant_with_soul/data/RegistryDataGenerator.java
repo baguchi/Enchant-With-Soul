@@ -1,8 +1,8 @@
-package baguchi.sick_of_soul.data;
+package baguchi.enchant_with_soul.data;
 
+import baguchi.enchant_with_soul.EnchantWithSoul;
+import baguchi.enchant_with_soul.data.resources.SoulMobEnchantTypes;
 import baguchi.enchantwithmob.data.resources.registries.MobEnchantTypes;
-import baguchi.sick_of_soul.SickOfSoul;
-import baguchi.sick_of_soul.data.resources.SoulMobEnchantTypes;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.data.PackOutput;
@@ -18,7 +18,7 @@ public class RegistryDataGenerator extends DatapackBuiltinEntriesProvider {
 
 
     public RegistryDataGenerator(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
-        super(output, registries, BUILDER, Set.of("minecraft", SickOfSoul.MODID));
+        super(output, registries, BUILDER, Set.of("minecraft", EnchantWithSoul.MODID));
     }
 
 

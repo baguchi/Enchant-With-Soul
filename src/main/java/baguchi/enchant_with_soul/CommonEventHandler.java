@@ -1,10 +1,10 @@
-package baguchi.sick_of_soul;
+package baguchi.enchant_with_soul;
 
+import baguchi.enchant_with_soul.data.resources.SoulMobEnchantTypes;
 import baguchi.enchantwithmob.EnchantConfig;
 import baguchi.enchantwithmob.attachment.MobEnchantAttachment;
 import baguchi.enchantwithmob.registry.ModAttachments;
 import baguchi.enchantwithmob.utils.MobEnchantUtils;
-import baguchi.sick_of_soul.data.resources.SoulMobEnchantTypes;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
@@ -22,7 +22,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.living.FinalizeSpawnEvent;
 
-@EventBusSubscriber(modid = SickOfSoul.MODID)
+@EventBusSubscriber(modid = EnchantWithSoul.MODID)
 public class CommonEventHandler {
     /*
      * handle the Normal Entity Mob Enchant

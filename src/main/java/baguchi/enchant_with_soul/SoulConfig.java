@@ -1,4 +1,4 @@
-package baguchi.sick_of_soul;
+package baguchi.enchant_with_soul;
 
 import net.neoforged.neoforge.common.ModConfigSpec;
 import org.apache.commons.lang3.tuple.Pair;
@@ -31,11 +31,11 @@ public class SoulConfig {
         public Common(ModConfigSpec.Builder builder) {
             difficultyBasePercent = builder
                     .comment("Set The Difficulty Base Soul Corrupted Mob Spawn Percent. [(Difficulty Base Percent * Difficulty id) + (Effective Difficulty Percent * Effective Difficulty)]")
-                    .translation(SickOfSoul.MODID + ".config.DifficultyEnchantedSpawnPercent")
+                    .translation(EnchantWithSoul.MODID + ".config.DifficultyEnchantedSpawnPercent")
                     .defineInRange("Difficulty Enchanted Spawn Percent", 1D, 0.0D, 1D);
             effectiveBasePercent = builder
                     .comment("Set The Effective Difficulty Base Soul Corrupted Mob Spawn Percent [(Difficulty Base Percent * Difficulty id) + (Effective Difficulty Percent * Effective Difficulty)]")
-                    .translation(SickOfSoul.MODID + ".config.EffectiveDifficultyEnchantedSpawnPercent")
+                    .translation(EnchantWithSoul.MODID + ".config.EffectiveDifficultyEnchantedSpawnPercent")
                     .defineInRange("Effective Difficulty Enchanted Spawn Percent", 0.025D, 0.0D, 1D);
         }
     }

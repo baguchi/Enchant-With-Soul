@@ -1,8 +1,8 @@
-package baguchi.sick_of_soul.data;
+package baguchi.enchant_with_soul.data;
 
 
-import baguchi.sick_of_soul.SickOfSoul;
-import baguchi.sick_of_soul.data.generator.CustomTagProvider;
+import baguchi.enchant_with_soul.EnchantWithSoul;
+import baguchi.enchant_with_soul.data.generator.CustomTagProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -13,7 +13,7 @@ import net.neoforged.neoforge.data.event.GatherDataEvent;
 
 import java.util.concurrent.CompletableFuture;
 
-@EventBusSubscriber(modid = SickOfSoul.MODID)
+@EventBusSubscriber(modid = EnchantWithSoul.MODID)
 public class DataGenerators {
 
     @SubscribeEvent

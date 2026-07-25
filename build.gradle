@@ -113,19 +113,11 @@ configurations {
 }
 
 repositories {
-    exclusiveContent {
-        forRepository {
-            maven {
-                name = "Modrinth"
-                url = "https://api.modrinth.com/maven"
-            }
-        }
-        // forRepositories(fg.repository) // Uncomment when using ForgeGradle
-        filter {
-            includeGroup "maven.modrinth"
-        }
+    maven {
+        url = "https://api.modrinth.com/maven"
     }
 }
+
 
 dependencies {
     // Example optional mod dependency with JEI
@@ -136,8 +128,8 @@ dependencies {
     // localRuntime "mezz.jei:jei-${mc_version}-neoforge:${jei_version}"
 
 
-    implementation "maven.modrinth:bagus-lib:${bagus_lib_version}"
-    implementation "maven.modrinth:enchantwithmob:${enchant_with_mob_version}"
+    implementation "maven.modrinth:95nSN4Rd:${bagus_lib_version}"
+    implementation "maven.modrinth:SwDIbBHh:${enchant_with_mob_version}"
 
     // Example mod dependency using a mod jar from ./libs with a flat dir repository
     // This maps to ./libs/coolmod-${mc_version}-${coolmod_version}.jar
