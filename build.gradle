@@ -112,6 +112,21 @@ configurations {
     runtimeClasspath.extendsFrom localRuntime
 }
 
+repositories {
+    exclusiveContent {
+        forRepository {
+            maven {
+                name = "Modrinth"
+                url = "https://api.modrinth.com/maven"
+            }
+        }
+        // forRepositories(fg.repository) // Uncomment when using ForgeGradle
+        filter {
+            includeGroup "maven.modrinth"
+        }
+    }
+}
+
 dependencies {
     // Example optional mod dependency with JEI
     // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime
@@ -119,6 +134,10 @@ dependencies {
     // compileOnly "mezz.jei:jei-${mc_version}-neoforge-api:${jei_version}"
     // We add the full version to localRuntime, not runtimeOnly, so that we do not publish a dependency on it
     // localRuntime "mezz.jei:jei-${mc_version}-neoforge:${jei_version}"
+
+
+    implementation "maven.modrinth:bagus-lib:${bagus_lib_version}"
+    implementation "maven.modrinth:enchantwithmob:${enchant_with_mob_version}"
 
     // Example mod dependency using a mod jar from ./libs with a flat dir repository
     // This maps to ./libs/coolmod-${mc_version}-${coolmod_version}.jar
@@ -147,6 +166,10 @@ var generateModMetadata = tasks.register("generateModMetadata", ProcessResources
             mod_name               : mod_name,
             mod_license            : mod_license,
             mod_version            : mod_version,
+            bagus_lib_version             : bagus_lib_version,
+            bagus_lib_version_range       : bagus_lib_version_range,
+            enchant_with_mob_version      : enchant_with_mob_version,
+            enchant_with_mob_version_range: enchant_with_mob_version_range
     ]
     inputs.properties replaceProperties
     expand replaceProperties

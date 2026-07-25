@@ -1,0 +1,7 @@
+{
+  "exp_gain_scale": 1.5,
+  "particle": {
+    "type": "minecraft:sculk_soul"
+  },
+  "texture": "sick_of_soul:textures/entity/soul_layer.png"
+}

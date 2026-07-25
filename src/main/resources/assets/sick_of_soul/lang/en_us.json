@@ -1,0 +1,8 @@
+{
+  "soul_power.sick_of_soul.frozen": "Frozen",
+  "sick_of_soul.config.DifficultyEnchantedSpawnPercent": "Difficulty Soul Corrupted Mob Spawn Percent",
+  "sick_of_soul.config.EffectiveDifficultyEnchantedSpawnPercent": "EffectiveDifficulty Soul Corrupted Spawn Percent",
+  "enchantwithmob.config.showEnchantedMobHud": "Show Soul Mob Hud",
+  "enchantwithmob.config.hudXPosition": "Set Hud X Position When Enabled",
+  "enchantwithmob.config.hudYPosition": "Set Hud Y Position When Enabled"
+}
