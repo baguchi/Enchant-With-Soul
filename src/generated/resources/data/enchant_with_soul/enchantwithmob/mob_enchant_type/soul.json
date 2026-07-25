@@ -3,5 +3,5 @@
   "particle": {
     "type": "minecraft:sculk_soul"
   },
-  "texture": "sick_of_soul:textures/entity/soul_layer.png"
+  "texture": "enchant_with_soul:textures/entity/soul_layer.png"
 }

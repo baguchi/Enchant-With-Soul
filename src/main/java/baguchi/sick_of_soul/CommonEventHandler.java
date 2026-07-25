@@ -41,7 +41,7 @@ public class CommonEventHandler {
             if (EnchantConfig.COMMON.naturalSpawnEnchantedMob.get() && isSpawnEnchantableEntity(event.getEntity())) {
 
                 if (!(livingEntity instanceof Animal) && !(livingEntity instanceof WaterAnimal) || EnchantConfig.COMMON.spawnEnchantedAnimal.get()) {
-                    if (event.getSpawnType() != EntitySpawnReason.BREEDING && event.getSpawnType() != EntitySpawnReason.CONVERSION && event.getSpawnType() != EntitySpawnReason.STRUCTURE && event.getSpawnType() != EntitySpawnReason.MOB_SUMMONED && event.getSpawnType() != EntitySpawnReason.SPAWNER && event.getSpawnType() != EntitySpawnReason.EVENT && event.getSpawnType() != EntitySpawnReason.SPAWN_ITEM_USE) {
+                    if (event.getSpawnType() != EntitySpawnReason.BREEDING && event.getSpawnType() != EntitySpawnReason.CONVERSION && event.getSpawnType() != EntitySpawnReason.STRUCTURE && event.getSpawnType() != EntitySpawnReason.MOB_SUMMONED && event.getSpawnType() != EntitySpawnReason.SPAWNER && event.getSpawnType() != EntitySpawnReason.EVENT) {
                         if (world.getRandom().nextFloat() < (SoulConfig.COMMON.difficultyBasePercent.get() * world.getDifficulty().getId()) + difficultScaleOnPercent * SoulConfig.COMMON.effectiveBasePercent.get()) {
                             if (!world.isClientSide()) {
                                 int i = 0;
