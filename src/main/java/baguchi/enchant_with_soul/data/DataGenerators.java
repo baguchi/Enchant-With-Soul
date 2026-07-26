@@ -26,5 +26,6 @@ public class DataGenerators {
         generator.addProvider(true, datapackProvider);
 
         generator.addProvider(true, new CustomTagProvider.MobEnchantTypeTagGenerator(packOutput, lookupProvider));
+        generator.addProvider(true, new CustomTagProvider.MobEnchantTagGenerator(packOutput, lookupProvider));
     }
 }

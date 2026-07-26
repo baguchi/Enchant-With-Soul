@@ -1,6 +1,7 @@
 package baguchi.enchant_with_soul;
 
 import baguchi.enchant_with_soul.data.resources.SoulMobEnchantTypes;
+import baguchi.enchant_with_soul.registry.SoulTags;
 import baguchi.enchantwithmob.EnchantConfig;
 import baguchi.enchantwithmob.attachment.MobEnchantAttachment;
 import baguchi.enchantwithmob.registry.ModAttachments;
@@ -21,6 +22,7 @@ import net.minecraft.world.level.LevelAccessor;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.living.FinalizeSpawnEvent;
+import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
 
 @EventBusSubscriber(modid = EnchantWithSoul.MODID)
 public class CommonEventHandler {
@@ -49,19 +51,19 @@ public class CommonEventHandler {
                                 switch (world.getDifficulty()) {
                                     case EASY:
                                         i = (int) Mth.clamp((5 + world.getRandom().nextInt(5)) * difficultScale * scale, 1, 20);
-                                        MobEnchantUtils.addRandomEnchantmentToEntity(livingEntity, attachment, world.getRandom(), i);
+                                        MobEnchantUtils.addRandomEnchantmentToEntity(livingEntity, attachment, world.getRandom(), i, SoulTags.MobEnchantTags.RANDOM_SOUL_SPAWN);
                                         attachment.setEnchantType(livingEntity, SoulMobEnchantTypes.SOUL);
                                         break;
                                     case NORMAL:
                                         i = (int) Mth.clamp((5 + world.getRandom().nextInt(5)) * difficultScale * scale, 1, 40);
 
-                                        MobEnchantUtils.addRandomEnchantmentToEntity(livingEntity, attachment, world.getRandom(), i);
+                                        MobEnchantUtils.addRandomEnchantmentToEntity(livingEntity, attachment, world.getRandom(), i, SoulTags.MobEnchantTags.RANDOM_SOUL_SPAWN);
                                         attachment.setEnchantType(livingEntity, SoulMobEnchantTypes.SOUL);
                                         break;
                                     case HARD:
                                         i = (int) Mth.clamp((5 + world.getRandom().nextInt(10)) * difficultScale * scale, 1, 50);
 
-                                        MobEnchantUtils.addRandomEnchantmentToEntity(livingEntity, attachment, world.getRandom(), i);
+                                        MobEnchantUtils.addRandomEnchantmentToEntity(livingEntity, attachment, world.getRandom(), i, SoulTags.MobEnchantTags.RANDOM_SOUL_SPAWN);
                                         attachment.setEnchantType(livingEntity, SoulMobEnchantTypes.SOUL);
                                         break;
                                 }
@@ -78,4 +80,31 @@ public class CommonEventHandler {
     private static boolean isSpawnEnchantableEntity(Entity entity) {
         return !(entity instanceof Player) && !(entity instanceof ArmorStand) && !(entity instanceof Boat) && !(entity instanceof Minecart) && !EnchantConfig.COMMON.ENCHANT_ON_SPAWN_EXCLUSION_MOBS.get().contains(BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString());
     }
+
+    @SubscribeEvent
+    public static void onEntityIncomingDamage(LivingIncomingDamageEvent event) {
+        LivingEntity livingEntity = event.getEntity();
+
+        if (event.getSource().getEntity() instanceof LivingEntity) {
+            LivingEntity attacker = (LivingEntity) event.getSource().getEntity();
+            if (attacker.level() instanceof ServerLevel serverLevel) {
+                MobEnchantAttachment attachmentAttacker = attacker.getData(ModAttachments.MOB_ENCHANTS);
+
+                if (attachmentAttacker.hasEnchant()) {
+
+                }
+
+            }
+        }
+        MobEnchantAttachment attachmentHurt = livingEntity.getData(ModAttachments.MOB_ENCHANTS);
+
+
+        if (attachmentHurt.hasEnchant() && attachmentHurt.getMobEnchantType(livingEntity).is(SoulMobEnchantTypes.SOUL)) {
+            if (livingEntity.level() instanceof ServerLevel serverLevel) {
+                event.setAmount(event.getAmount() / 2);
+            }
+        }
+
+    }
+
 }

@@ -32,7 +32,7 @@ public class SoulConfig {
             difficultyBasePercent = builder
                     .comment("Set The Difficulty Base Soul Corrupted Mob Spawn Percent. [(Difficulty Base Percent * Difficulty id) + (Effective Difficulty Percent * Effective Difficulty)]")
                     .translation(EnchantWithSoul.MODID + ".config.DifficultyEnchantedSpawnPercent")
-                    .defineInRange("Difficulty Enchanted Spawn Percent", 1D, 0.0D, 1D);
+                    .defineInRange("Difficulty Enchanted Spawn Percent", 0.005, 0.0D, 1D);
             effectiveBasePercent = builder
                     .comment("Set The Effective Difficulty Base Soul Corrupted Mob Spawn Percent [(Difficulty Base Percent * Difficulty id) + (Effective Difficulty Percent * Effective Difficulty)]")
                     .translation(EnchantWithSoul.MODID + ".config.EffectiveDifficultyEnchantedSpawnPercent")
