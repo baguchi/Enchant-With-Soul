@@ -101,7 +101,7 @@ public class CommonEventHandler {
 
         if (attachmentHurt.hasEnchant() && attachmentHurt.getMobEnchantType(livingEntity).is(SoulMobEnchantTypes.SOUL)) {
             if (livingEntity.level() instanceof ServerLevel serverLevel) {
-                event.setAmount(event.getAmount() / 2);
+                event.setAmount(event.getAmount() / 3);
             }
         }
 
