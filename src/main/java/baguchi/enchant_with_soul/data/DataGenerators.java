@@ -17,7 +17,7 @@ import java.util.concurrent.CompletableFuture;
 public class DataGenerators {
 
     @SubscribeEvent
-    public static void gatherData(GatherDataEvent.Client event) {
+    public static void gatherData(GatherDataEvent event) {
         DataGenerator generator = event.getGenerator();
         PackOutput packOutput = generator.getPackOutput();
         DatapackBuiltinEntriesProvider datapackProvider = new RegistryDataGenerator(packOutput, event.getLookupProvider());
@@ -25,7 +25,7 @@ public class DataGenerators {
         CompletableFuture<HolderLookup.Provider> lookupProvider = datapackProvider.getRegistryProvider();
         generator.addProvider(true, datapackProvider);
 
-        generator.addProvider(true, new CustomTagProvider.MobEnchantTypeTagGenerator(packOutput, lookupProvider));
-        generator.addProvider(true, new CustomTagProvider.MobEnchantTagGenerator(packOutput, lookupProvider));
+        generator.addProvider(true, new CustomTagProvider.MobEnchantTypeTagGenerator(packOutput, lookupProvider, event.getExistingFileHelper()));
+        generator.addProvider(true, new CustomTagProvider.MobEnchantTagGenerator(packOutput, lookupProvider, event.getExistingFileHelper()));
     }
 }

@@ -10,16 +10,17 @@ import baguchi.enchantwithmob.registry.MobEnchants;
 import baguchi.enchantwithmob.registry.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.tags.KeyTagProvider;
+import net.minecraft.data.tags.TagsProvider;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 import java.util.concurrent.CompletableFuture;
 
 public class CustomTagProvider {
 
-    public static class MobEnchantTypeTagGenerator extends KeyTagProvider<MobEnchantType> {
+    public static class MobEnchantTypeTagGenerator extends TagsProvider<MobEnchantType> {
 
-        public MobEnchantTypeTagGenerator(PackOutput output, CompletableFuture<HolderLookup.Provider> provider) {
-            super(output, MobEnchantTypes.MOB_ENCHANT_TYPE_REGISTRY_KEY, provider, EnchantWithSoul.MODID);
+        public MobEnchantTypeTagGenerator(PackOutput output, CompletableFuture<HolderLookup.Provider> provider, ExistingFileHelper existingFileHelper) {
+            super(output, MobEnchantTypes.MOB_ENCHANT_TYPE_REGISTRY_KEY, provider, EnchantWithSoul.MODID, existingFileHelper);
         }
 
         @Override
@@ -28,10 +29,10 @@ public class CustomTagProvider {
         }
     }
 
-    public static class MobEnchantTagGenerator extends KeyTagProvider<MobEnchant> {
+    public static class MobEnchantTagGenerator extends TagsProvider<MobEnchant> {
 
-        public MobEnchantTagGenerator(PackOutput output, CompletableFuture<HolderLookup.Provider> provider) {
-            super(output, MobEnchants.MOB_ENCHANT_REGISTRY, provider, EnchantWithSoul.MODID);
+        public MobEnchantTagGenerator(PackOutput output, CompletableFuture<HolderLookup.Provider> provider, ExistingFileHelper existingFileHelper) {
+            super(output, MobEnchants.MOB_ENCHANT_REGISTRY, provider, EnchantWithSoul.MODID, existingFileHelper);
         }
 
         @Override
