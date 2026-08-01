@@ -3,6 +3,8 @@
     "enchantwithmob:multishot",
     "enchantwithmob:poison",
     "enchantwithmob:poison_cloud",
-    "enchantwithmob:strong"
+    "enchantwithmob:strong",
+    "enchantwithmob:frozen",
+    "enchantwithmob:fire_aspect"
   ]
 }
