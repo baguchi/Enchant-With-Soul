@@ -26,7 +26,7 @@ public class EnchantWithSoul {
 
         modEventBus.addListener(this::commonSetup);
 
-        modContainer.registerConfig(ModConfig.Type.COMMON, SoulConfig.COMMON_SPEC);
+        modContainer.registerConfig(ModConfig.Type.LOCAL, SoulConfig.COMMON_SPEC);
         modContainer.registerConfig(ModConfig.Type.CLIENT, SoulConfig.CLIENT_SPEC);
     }
 
