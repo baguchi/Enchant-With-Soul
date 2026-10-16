@@ -5,6 +5,7 @@
     "enchantwithmob:poison_cloud",
     "enchantwithmob:strong",
     "enchantwithmob:frozen",
-    "enchantwithmob:fire_aspect"
+    "enchantwithmob:fire_aspect",
+    "enchantwithmob:health_boost"
   ]
 }

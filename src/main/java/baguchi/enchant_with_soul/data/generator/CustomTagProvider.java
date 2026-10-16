@@ -39,7 +39,7 @@ public class CustomTagProvider {
             this.tag(SoulTags.MobEnchantTags.RANDOM_SOUL_SPAWN).add(MobEnchants.MULTISHOT.getKey())
                     .add(MobEnchants.POISON.getKey()).add(MobEnchants.POISON_CLOUD.getKey())
                     .add(MobEnchants.STRONG.getKey())
-                    .add(MobEnchants.FROZEN.getKey()).add(MobEnchants.FIRE_ASPECT.getKey());
+                    .add(MobEnchants.FROZEN.getKey()).add(MobEnchants.FIRE_ASPECT.getKey()).add(MobEnchants.HEALTH_BOOST.getKey());
 
         }
     }
